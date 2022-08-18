@@ -1,9 +1,9 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Home from '../screens/Home';
-import Store from '../screens/Store';
-import ViewOffers from '../screens/ViewOffers';
+import History from '../screens/History';
+import Home from '../Tabs/Home';
+import Store from '../Tabs/Store';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,16 +19,6 @@ const BottomNavBar = () => {
           ),
         }}
         component={Home}
-      />
-      <Tab.Screen
-        name="ViewOffers"
-        options={{
-          headerShown: false,
-          tabBarIcon: ({color, size}) => (
-            <Icon name="home-outline" size={30} color="#f4511e" />
-          ),
-        }}
-        component={ViewOffers}
       />
       <Tab.Screen
         name="Store"
@@ -48,7 +38,6 @@ const BottomNavBar = () => {
         component={Home}
         options={{
           headerShown: false,
-
           tabBarIcon: ({color, size}) => (
             <Icon name="wallet-outline" size={30} color="#f4511e" />
           ),
@@ -56,13 +45,24 @@ const BottomNavBar = () => {
       />
       <Tab.Screen
         name="History"
-        component={Home}
-        options={{
-          headerShown: false,
+        component={History}
+        options={({navigation})=>({
+          contentStyle: {backgroundColor: '#EEECEC'},
+            title: 'History',
+            headerStyle: {backgroundColor: '#FF7214'},
+            headerTitleStyle: {color: 'white'},
+            headerLeft: () => (
+              <Icon
+                name="ios-arrow-back"
+                onPress={() => navigation.goBack()}
+                size={30}
+                color="white"
+              />
+            ),
           tabBarIcon: ({color, size}) => (
             <Icon name="paper-plane-outline" size={30} color="#f4511e" />
           ),
-        }}
+        })}
       />
     </Tab.Navigator>
   );

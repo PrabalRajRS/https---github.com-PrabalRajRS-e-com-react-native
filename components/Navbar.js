@@ -15,23 +15,23 @@ const Navbar = () => {
         <Text style={{color: 'white'}}>Mumbai, India</Text>
       </View>
       <View style={styles.headerIcon}>
-        <Icon style={styles.icon} name="search-sharp" size={40} color="white" />
+        <Icon style={styles.icon} name="search-sharp" size={35} color="white" />
         <Icon
           style={styles.icon}
           name="barcode-sharp"
-          size={40}
+          size={35}
           color="white"
         />
         <Icon
           style={styles.icon}
           name="notifications-sharp"
-          size={40}
+          size={35}
           color="white"
         />
         <Icon
           style={styles.icon}
           name="help-circle-outline"
-          size={40}
+          size={35}
           color="white"
         />
       </View>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   locationContainer: {
     color: 'white',
-    width: 150,
+    width: 160,
     display: 'flex',
     marginLeft: 10,
   },
