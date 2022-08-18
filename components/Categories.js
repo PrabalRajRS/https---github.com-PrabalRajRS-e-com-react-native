@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, StyleSheet, FlatList, Text, Pressable, TouchableHighlight} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  FlatList,
+  Text,
+  Pressable,
+  TouchableHighlight,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const data = [
@@ -30,13 +37,14 @@ const Categories = ({categoryData, navigation}) => {
     <View style={styles.categories}>
       {categoryData
         ? categoryData.map(item => (
-            <TouchableHighlight  onPress={() => navigation.navigate(item.navigate)}>
+            <TouchableHighlight underlayColor={"white"}
+              onPress={() => navigation.navigate(item.navigate)}>
               <View style={styles.category}>
                 <Icon name={item.icon} size={43} color="#FF7214" />
                 <Text style={styles.name1}>{item.categoryOne}</Text>
                 <Text style={styles.name}>{item.categoryTwo}</Text>
               </View>
-            </TouchableHighlight >
+            </TouchableHighlight>
           ))
         : data.map(item => (
             <View style={styles.category}>
